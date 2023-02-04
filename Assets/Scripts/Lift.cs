@@ -62,18 +62,7 @@ public class Lift : MonoBehaviour
             {
                 moveToFinish = true;
             }
-        }
-
-        void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.transform.tag == "Player")
-            {
-                //Collided with player so kill them
-                //Get player
-
-                collision.transform.parent = platform.transform;
-            }
-        }
+        }        
 
     }
 }
