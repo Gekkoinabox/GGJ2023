@@ -17,6 +17,7 @@ public class KillBox : MonoBehaviour
         if(collision.transform.tag == "Player")
         {
             //Collided with player so kill them
+            
         }
     }
 }
