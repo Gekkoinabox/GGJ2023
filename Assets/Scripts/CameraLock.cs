@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraLock : MonoBehaviour
 {
 
-    public Camera camera;
+    public Camera cam;
     public Transform player;
+    public float yoffset;
     public bool lockCamera = false;
 
     // Update is called once per frame
@@ -14,7 +15,9 @@ public class CameraLock : MonoBehaviour
     {
         if (lockCamera)
         {
-            camera.transform.position = player.position;
+
+            cam.transform.position = new Vector3(player.position.x, player.position.y + yoffset, cam.transform.position.z);
+            
         }
     }
 
