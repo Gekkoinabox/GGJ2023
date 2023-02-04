@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovementv2 : MonoBehaviour 
 {
@@ -10,11 +11,14 @@ public class PlayerMovementv2 : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     int direction;
+    GameObject spawn;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        spawn = GameObject.FindGameObjectWithTag("SpawnPoint");
+        transform.position = spawn.transform.position;
         direction = 0;
     }
 

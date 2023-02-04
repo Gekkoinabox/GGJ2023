@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -62,5 +63,17 @@ public class Lift : MonoBehaviour
                 moveToFinish = true;
             }
         }
+
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.transform.tag == "Player")
+            {
+                //Collided with player so kill them
+                //Get player
+
+                collision.transform.parent = platform.transform;
+            }
+        }
+
     }
 }
