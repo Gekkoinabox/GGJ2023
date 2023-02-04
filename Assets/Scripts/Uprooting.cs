@@ -7,9 +7,12 @@ public class Uprooting : MonoBehaviour
     public bool readyForD;
     public bool readyForA = true;
     int counter;
+    private Animator anim;
+
 
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         counter = 1;
     }
     
@@ -22,30 +25,33 @@ public class Uprooting : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A) && readyForA && counter % 2 != 0)
             {
                 readyForA = false;
-                Debug.Log("a pressed. Counter: " + counter);
                 RotateSprite(0);
                 counter++;
             }
 
             if (Input.GetKeyUp(KeyCode.A))
-            {
-                Debug.Log("a released");
+            { 
                 readyForD = true;
             }
 
             if (Input.GetKeyDown(KeyCode.D) && readyForD && counter % 2 == 0)
             {
                 readyForD = false;
-                Debug.Log("d pressed. Counter: " + counter);
                 RotateSprite(1);
                 counter++;
             }
 
             if (Input.GetKeyUp(KeyCode.D))
             {
-                Debug.Log("d pressed. Counter: " + counter);
+                Debug.Log("d released. Counter: " + counter);
                 readyForA = true;
             }
+        }
+
+        else if (counter >= 6)
+        {
+            this.transform.eulerAngles = new Vector3(0, 0, 0);
+            anim.Play("JumpOut");
         }
     }
 
@@ -56,6 +62,7 @@ public class Uprooting : MonoBehaviour
         {
             this.transform.eulerAngles = new Vector3(0, 0, 25);
         }
+
         if(direction == 1)
         {
             this.transform.eulerAngles = new Vector3(0, 0, -25);
