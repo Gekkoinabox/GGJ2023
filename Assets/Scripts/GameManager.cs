@@ -8,10 +8,13 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI healthTxt;
+    [SerializeField]
+    TextMeshProUGUI scoreTxt;
 
     public GameObject gameOverScreen;
 
     public int playerHealth = 3;
+    public int playerScore = 0;
 
     private void Start()
     {
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         healthTxt.text = "health: " + playerHealth;
+        scoreTxt.text = "score: " + playerScore;
 
         if (playerHealth == 0)
         {
@@ -41,7 +45,7 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Scene1");
 
         RefreshScene();
         Time.timeScale = 1;
