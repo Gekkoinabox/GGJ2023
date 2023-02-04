@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DestoryProjectile : MonoBehaviour
 {
-    [SerializeField]
-    float projectileLifeSpan = 5;
-
     // starts coroutine 'timer'
     private void Start()
     {
