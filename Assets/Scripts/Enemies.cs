@@ -10,7 +10,7 @@ public class Enemies : MonoBehaviour
 
     private void Update()
     {
-        // kills enenmy game object
+        // kills enenmy game object when enemy's health is 0
         if (enemyHealth == 0)
         {
             Destroy(this.gameObject);
@@ -22,7 +22,6 @@ public class Enemies : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             gM.playerHealth = gM.playerHealth - 1;
-            //Destroy(this.gameObject);
         }
 
         if (other.gameObject.tag == "Projectile")
