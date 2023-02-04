@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Projectile
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Wallpaper
+  - Foreground
+  - Background
   - 
   - 
   - 
@@ -40,11 +41,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Wallpaper
+    uniqueID: 1827062607
     locked: 0
   - name: Background
     uniqueID: 2903912529
+    locked: 0
+  - name: Foreground
+    uniqueID: 2268997505
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 1847795417
