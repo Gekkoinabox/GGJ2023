@@ -9,11 +9,13 @@ public class PlayerMovementv2 : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
+    int direction;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        direction = 0;
     }
 
     // Update is called once per frame
@@ -31,6 +33,21 @@ public class PlayerMovementv2 : MonoBehaviour
     {
         //move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump= false;
+        if (Input.GetKey(KeyCode.A))
+        {
+            //Facing left
+            direction = 0;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            //Facing Right
+            direction = 1;
+        }
+        jump = false;
+    }
+
+    public int GetDirection()
+    {
+        return direction;
     }
 }
