@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CameraLock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    public Camera camera;
+    public Transform player;
+    public bool lockCamera = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (lockCamera)
+        {
+            camera.transform.position = player.position;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(lockCamera == false)
+        {
+            lockCamera = true;
+        }
     }
 }
