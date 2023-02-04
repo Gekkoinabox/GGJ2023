@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f903421813203c42849588fda79d7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
+  cam: {fileID: 519420031}
   player: {fileID: 829110876}
   yoffset: 0
   lockCamera: 0
@@ -1194,7 +1194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f35cdb3e36bcb345956b865ec87ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
 --- !u!1 &1348277099
 GameObject:
   m_ObjectHideFlags: 0
