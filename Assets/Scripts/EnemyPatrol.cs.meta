@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Lift.cs.meta
-guid: c1771ea910604b744af0fcf59c3edc37
-========
-guid: c18996fe35ff99448b75c89a99f477fb
->>>>>>>> beca's-side-branch:Assets/Scripts/Enemies.cs.meta
+guid: fe76e7d7d651c7b4e8c445e4eca1e13d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

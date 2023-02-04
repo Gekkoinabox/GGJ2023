@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Lift.cs.meta
-guid: c1771ea910604b744af0fcf59c3edc37
+<<<<<<<< HEAD:Assets/Scripts/KillBox.cs.meta
+guid: fa5288b8654ceec4da363de4ab7317f7
 ========
-guid: c18996fe35ff99448b75c89a99f477fb
->>>>>>>> beca's-side-branch:Assets/Scripts/Enemies.cs.meta
+guid: f4a6fd5c00027b04fa594aa81d902188
+>>>>>>>> beca's-side-branch:Assets/Scripts/DestoryProjectile.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

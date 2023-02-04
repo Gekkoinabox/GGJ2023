@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/KillBox.cs.meta
 guid: 68ea4da088b206e4abd7a161f4280965
+========
+guid: f4a6fd5c00027b04fa594aa81d902188
+>>>>>>>> beca's-side-branch:Assets/Scripts/DestoryProjectile.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
