@@ -8,6 +8,7 @@ public class Lift : MonoBehaviour
 {
     public Transform start, finish;
     bool moveToFinish;
+    public GameObject platform;
 
     Vector2 target;
     Vector2 position;
@@ -20,8 +21,8 @@ public class Lift : MonoBehaviour
     {
         moveToFinish = true;
         target = finish.position;
-        position = this.transform.position;
-        speed = 1f;
+        position = new Vector2(platform.transform.position.x, platform.transform.position.y);
+        speed = 2f;
         
     }
 
@@ -29,16 +30,35 @@ public class Lift : MonoBehaviour
     void Update()
     {
         step = speed * Time.deltaTime;
-        position = this.transform.position;
+        position = platform.transform.position;
 
         if(moveToFinish)
         {
-            if(transform.position != finish.position)
+            if(platform.transform.position != finish.position)
             {
                 //Go towards finish
                 //Get Direction
-                transform.position = Vector2.MoveTowards(position, target, step);                
+                platform.transform.position = Vector2.MoveTowards(position, target, step);                
                 
+            }
+            if(platform.transform.position == finish.position)
+            {
+                moveToFinish = false;
+            }
+            
+        }
+        if(!moveToFinish)
+        {
+            if (platform.transform.position != start.position)
+            {
+                //Go towards start
+                platform.transform.position = Vector2.MoveTowards(position, target, step);
+                
+
+            }
+            if (platform.transform.position == start.position)
+            {
+                moveToFinish = true;
             }
         }
     }
