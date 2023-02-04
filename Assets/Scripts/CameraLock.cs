@@ -7,7 +7,6 @@ public class CameraLock : MonoBehaviour
 
     public Camera camera;
     public Transform player;
-    public float yoffset;
     public bool lockCamera = false;
 
     // Update is called once per frame
@@ -15,9 +14,7 @@ public class CameraLock : MonoBehaviour
     {
         if (lockCamera)
         {
-
-            camera.transform.position = new Vector3(player.position.x, player.position.y + yoffset, camera.transform.position.z);
-            
+            camera.transform.position = player.position;
         }
     }
 
