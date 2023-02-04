@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2648328440726560109}
   - component: {fileID: 2648328440726560108}
   - component: {fileID: 2648328440726560107}
-  - component: {fileID: 535234458275297651}
   - component: {fileID: 4394964592227571949}
+  - component: {fileID: 3607287480649216395}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Projectile
@@ -106,18 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &535234458275297651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2648328440726560105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a6fd5c00027b04fa594aa81d902188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &4394964592227571949
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,3 +122,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3607287480649216395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648328440726560105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5288b8654ceec4da363de4ab7317f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
