@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraLock : MonoBehaviour
 {
 
-    public Camera camera;
+    public Camera cam;
     public Transform player;
     public float yoffset;
     public bool lockCamera = false;
@@ -16,7 +16,7 @@ public class CameraLock : MonoBehaviour
         if (lockCamera)
         {
 
-            camera.transform.position = new Vector3(player.position.x, player.position.y + yoffset, camera.transform.position.z);
+            cam.transform.position = new Vector3(player.position.x, player.position.y + yoffset, cam.transform.position.z);
             
         }
     }
