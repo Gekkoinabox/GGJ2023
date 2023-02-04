@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,7 +11,7 @@ public class Lift : MonoBehaviour
     bool moveToFinish;
     public GameObject platform;
 
-    Vector2 target;
+    Vector2 targetFinish, targetStart;
     Vector2 position;
     float step;
     float speed;
@@ -20,7 +21,8 @@ public class Lift : MonoBehaviour
     void Start()
     {
         moveToFinish = true;
-        target = finish.position;
+        targetFinish = finish.position;
+        targetStart = start.position;
         position = new Vector2(platform.transform.position.x, platform.transform.position.y);
         speed = 2f;
         
@@ -34,14 +36,14 @@ public class Lift : MonoBehaviour
 
         if(moveToFinish)
         {
-            if(platform.transform.position != finish.position)
+            if(position != targetFinish)
             {
                 //Go towards finish
                 //Get Direction
-                platform.transform.position = Vector2.MoveTowards(position, target, step);                
+                platform.transform.position = Vector2.MoveTowards(position, targetFinish, step);                
                 
             }
-            if(platform.transform.position == finish.position)
+            if(position == targetFinish)
             {
                 moveToFinish = false;
             }
@@ -49,17 +51,29 @@ public class Lift : MonoBehaviour
         }
         if(!moveToFinish)
         {
-            if (platform.transform.position != start.position)
+            if (position != targetStart)
             {
                 //Go towards start
-                platform.transform.position = Vector2.MoveTowards(position, target, step);
+                platform.transform.position = Vector2.MoveTowards(position, targetStart, step);
                 
 
             }
-            if (platform.transform.position == start.position)
+            if (position == targetStart)
             {
                 moveToFinish = true;
             }
         }
+
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.transform.tag == "Player")
+            {
+                //Collided with player so kill them
+                //Get player
+
+                collision.transform.parent = platform.transform;
+            }
+        }
+
     }
 }
