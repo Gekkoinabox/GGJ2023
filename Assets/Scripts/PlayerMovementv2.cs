@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementv2 : MonoBehaviour 
+public class PlayerMovementv2 : MonoBehaviour
 {
     public CharacterController2D controller;
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
+    int direction;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        direction = 0;
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class PlayerMovementv2 : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            jump= true;
+            jump = true;
         }
     }
 
@@ -31,6 +33,22 @@ public class PlayerMovementv2 : MonoBehaviour
     {
         //move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump= false;
+        if (Input.GetKey(KeyCode.A))
+        {
+            //Facing left
+            direction = 0;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            //Facing Right
+            direction = 1;
+        }
+        jump = false;
+    }
+
+    // which direction the player is facing 
+    public int GetDirection()
+    {
+        return direction;
     }
 }

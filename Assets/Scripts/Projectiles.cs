@@ -7,26 +7,26 @@ public class Projectiles : MonoBehaviour
     public Transform stoneSpawn;
     public GameObject stone;
     public float stoneSpeed = 10f;
-
-    private void Start()
-    {
-        
-    }
+    public PlayerMovementv2 pMV2;
 
     private void Update()
     {
+        // player shooting mechanics
         if (Input.GetKeyDown(KeyCode.P))
         {
-            GameObject stoneObject = Instantiate(stone, transform.position, Quaternion.identity) as GameObject;
-            float shootDir = stoneSpawn.forward.x;
+            // if player is facing right
+            if (pMV2.GetDirection() == 1)
+            {
+                GameObject stoneObject = Instantiate(stone, transform.position, Quaternion.identity);
+                stoneObject.GetComponent<Rigidbody2D>().velocity = new Vector3(stoneSpeed, 0, 0);
+            }
 
-            stoneObject.GetComponent<Rigidbody2D>().velocity = new Vector3(stoneSpeed, 0, 0);
-
-            //Rigidbody2D stoneInstance;
-
-            //stoneInstance = Instantiate(stone, stoneSpawn.position, stoneSpawn.rotation);
-            //stoneInstance.transform.position += Vector3.forward * stoneSpeed * Time.deltaTime;
-            //stoneInstance.AddForce(stoneSpawn.forward * stoneSpeed);
+            // if player is facing left
+            else if (pMV2.GetDirection() == 0)
+            {
+                GameObject stoneObject = Instantiate(stone, transform.position, Quaternion.identity);
+                stoneObject.GetComponent<Rigidbody2D>().velocity = new Vector3(-stoneSpeed, 0, 0);
+            }
         }
     }
 }
