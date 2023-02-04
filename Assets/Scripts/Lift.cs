@@ -37,8 +37,7 @@ public class Lift : MonoBehaviour
             {
                 //Go towards finish
                 //Get Direction
-                transform.position = Vector2.MoveTowards(position, target, step);
-                
+                transform.position = Vector2.MoveTowards(position, target, step);                
                 
             }
         }
