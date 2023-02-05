@@ -9,4 +9,9 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Uprooting");
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("StartingScene");
+    }
 }
