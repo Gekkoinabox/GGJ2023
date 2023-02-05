@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Uprooting : MonoBehaviour
 {
     public bool readyForD;
     public bool readyForA = true;
     int counter;
+    public GameObject player;
     private Animator anim;
+    public TextMeshProUGUI harvest;
+    public GameObject infoScreen;
 
 
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        anim = player.GetComponent<Animator>();
         counter = 1;
+        harvest.text = "press A then D to harvest yourself";
     }
     
     void Update()
@@ -43,15 +48,14 @@ public class Uprooting : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.D))
             {
-                Debug.Log("d released. Counter: " + counter);
                 readyForA = true;
             }
         }
 
         else if (counter >= 6)
         {
-            this.transform.eulerAngles = new Vector3(0, 0, 0);
-            anim.Play("JumpOut");
+            infoScreen.SetActive(false);
+            StartCoroutine(SmallWait());
         }
     }
 
@@ -60,12 +64,19 @@ public class Uprooting : MonoBehaviour
     {
         if (direction == 0)
         {
-            this.transform.eulerAngles = new Vector3(0, 0, 25);
+            transform.eulerAngles = new Vector3(0, 0, 25);
         }
 
         if(direction == 1)
         {
-            this.transform.eulerAngles = new Vector3(0, 0, -25);
+            transform.eulerAngles = new Vector3(0, 0, -25);
         }
+    }
+
+    IEnumerator SmallWait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        transform.eulerAngles = new Vector3(0, 0, 0);
+        anim.Play("JumpOut");
     }
 }
