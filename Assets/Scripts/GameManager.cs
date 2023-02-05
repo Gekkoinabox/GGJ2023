@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI healthTxt;
     [SerializeField]
     TextMeshProUGUI scoreTxt;
+    public bool win;
 
     public GameObject gameOverScreen;
 
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameOverScreen.SetActive(false);
+        win = false;
     }
 
     private void Update()
@@ -58,5 +60,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("player quit");
         Application.Quit();
+    }
+
+    public void SetWin(bool input)
+    {
+        win = input;
     }
 }
