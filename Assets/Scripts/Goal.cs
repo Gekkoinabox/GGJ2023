@@ -26,6 +26,7 @@ public class Goal : MonoBehaviour
             {
                 //call win
                 gm.GetComponent<GameManager>().SetWin(true);
+                Debug.Log("Win");
             }
         }
     }
