@@ -57,17 +57,15 @@ public class PlayerMovementv2 : MonoBehaviour
         {
             anim.SetBool("IsWalking", false);
         }
-    }
 
-    private void FixedUpdate()
-    {
+
         //move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         if (Input.GetKeyDown(KeyCode.A))
         {
             //Facing left
             direction = 0;
-            
+
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -82,4 +80,5 @@ public class PlayerMovementv2 : MonoBehaviour
     {
         return direction;
     }
+
 }

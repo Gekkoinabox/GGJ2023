@@ -8,6 +8,7 @@ public class EnemyPatrol : MonoBehaviour
     public bool movingLeft = true;
     public bool goRight;
     public Transform groundDetection;
+    public Transform wallDetection;
 
     void Update()
     {
@@ -21,6 +22,21 @@ public class EnemyPatrol : MonoBehaviour
         }
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1f); // so the enemy stays on the ground
+        RaycastHit2D wallInfo = Physics2D.Raycast(wallDetection.position, Vector2.right, 1f);
+
+        if(wallInfo.collider == true)
+        {
+            if (movingLeft)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0); // make the enemy go right
+                movingLeft = false; // make this boolean false
+            }
+            if (!movingLeft)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0); // make the enemy go left
+                movingLeft = true; // make this boolean true
+            }
+        }
 
         if (groundInfo.collider == false) // if the enemy groundinfo collider is not touching the ground
         {
