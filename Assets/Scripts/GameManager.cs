@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         win = false;
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

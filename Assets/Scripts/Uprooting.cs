@@ -93,6 +93,7 @@ public class Uprooting : MonoBehaviour
 
     public void Continue()
     {
+        StopAllCoroutines();
         SceneManager.LoadScene("Kitchen");
     }
 }
