@@ -6,11 +6,13 @@ public class KillBox : MonoBehaviour
 {
     public Transform spawnPoint;
     GameObject player;
+    GameObject gm;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        gm = GameObject.FindWithTag("GameManager");
     }
 
 
@@ -22,6 +24,7 @@ public class KillBox : MonoBehaviour
             //Get player
             
             player.transform.position = spawnPoint.position;
+            gm.GetComponent<GameManager>().playerHealth--;
         }
     }
 }
