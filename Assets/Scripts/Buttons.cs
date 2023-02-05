@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-//    public void Restart()
-//    {
-//        SceneManager.LoadScene("Garden");
-
-//    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Uprooting");
+    }
 }

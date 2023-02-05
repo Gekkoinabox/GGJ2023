@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartingScene.unity
+    guid: 8c501bb1d0c0de148aae06dc200fad99
+  - enabled: 1
+    path: Assets/Scenes/Uprooting.unity
+    guid: 8506407d97acf6245802e092ad42736b
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: e7010bf688f01184ca78e278820dccc9
+  - enabled: 1
+    path: Assets/Scenes/Closing.unity
+    guid: c7973a34be11e0348bc2a4c7aaff58ff
+  - enabled: 0
     path: Assets/Scenes/Scene1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Garden.unity
     guid: 03e644b734c39bc48b5c79dfc00c05b9
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Uprooting : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Uprooting : MonoBehaviour
     private Animator anim;
     public TextMeshProUGUI harvest;
     public GameObject infoScreen;
+    public GameObject parsnip;
+    public GameObject continueBtn;
 
 
     void Start()
@@ -19,6 +22,7 @@ public class Uprooting : MonoBehaviour
         anim = player.GetComponent<Animator>();
         counter = 1;
         harvest.text = "press A then D to harvest yourself";
+        continueBtn.SetActive(false);
     }
     
     void Update()
@@ -64,19 +68,31 @@ public class Uprooting : MonoBehaviour
     {
         if (direction == 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 25);
+            parsnip.transform.eulerAngles = new Vector3(0, 0, 25);
         }
 
         if(direction == 1)
         {
-            transform.eulerAngles = new Vector3(0, 0, -25);
+            parsnip.transform.eulerAngles = new Vector3(0, 0, -25);
         }
     }
 
     IEnumerator SmallWait()
     {
         yield return new WaitForSeconds(0.5f);
-        transform.eulerAngles = new Vector3(0, 0, 0);
+        parsnip.transform.eulerAngles = new Vector3(0, 0, 0);
         anim.Play("JumpOut");
+        StartCoroutine(AnotherWait());
+    }
+
+    IEnumerator AnotherWait()
+    {
+        yield return new WaitForSeconds(6);
+        continueBtn.SetActive(true);
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene("Kitchen");
     }
 }
