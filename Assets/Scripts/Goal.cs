@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    GameObject gm;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        gm = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class Goal : MonoBehaviour
             if(collision.tag == "Player")
             {
                 //call win
+                gm.GetComponent<GameManager>().SetWin(true);
             }
         }
     }
