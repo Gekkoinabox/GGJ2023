@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
 
         if (playerHealth == 0)
         {
-            gameOverScreen.SetActive(true);
+            //gameOverScreen.SetActive(true);
+            SceneManager.LoadScene("GameOver");
             Time.timeScale = 0;
         }
     }
