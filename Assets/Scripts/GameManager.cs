@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
             Time.timeScale = 0;
         }
+        if(win == true)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 
     // resets variables for next playthrough
