@@ -87,6 +87,8 @@ public class Uprooting : MonoBehaviour
 
     IEnumerator AnotherWait()
     {
+        yield return new WaitForSeconds(3);
+        //parsnip.transform.rotation = Quaternion.Euler (0, 180, 0);
         yield return new WaitForSeconds(6);
         continueBtn.SetActive(true);
     }
